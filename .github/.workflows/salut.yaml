@@ -1,17 +1,19 @@
 name: Bonjour
 
-on: [push] # Ce workflow se déclenche sur un push dans le dépôt
+on: [push]
 
 jobs:
-  Salutations: # Nom du job : Salutations
+  Salutations:
     name: Salutations
-    runs-on: ubuntu-latest # OS où s'exécute le job
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Hello # Une tâche pour saluer
+      - name: Hello
         env:
           personneASaluer: "Mon voisin Totoro"
-        run: 'echo "Bonjour ${personneASaluer}"'
+        run: |
+          echo "Bonjour ${personneASaluer}"
 
-      - name: L heure de salutation # Affiche l'heure
-        run: 'echo "L heure était $(date)."'
+      - name: "L'heure de salutation"
+        run: |
+          echo "L'heure était $(date)."

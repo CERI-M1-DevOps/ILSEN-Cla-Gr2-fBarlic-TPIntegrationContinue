@@ -4,15 +4,29 @@ public class ListeSimple {
     private long size;
     Noeud tete;
 
+    /**
+     * Retourne le nombre d'éléments présents dans la liste.
+     * @return le nombre d'éléments de la liste
+     */
     public long getSize() {
         return size;
     }
 
+    /**
+     * Ajoute un élément au début de la liste.
+     * @param element la valeur à ajouter en tête de liste
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
 
+    /**
+     * Remplace la première occurrence d'un élément par une nouvelle valeur.
+     * Si l'élément n'est pas présent, la liste n'est pas modifiée.
+     * @param element la valeur à rechercher
+     * @param nouvelleValeur la valeur qui remplace l'élément trouvé
+     */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
@@ -67,6 +81,14 @@ public class ListeSimple {
        tete = supprimeTousRecurs(element, tete);
     }
 
+    /**
+     * Supprime récursivement toutes les occurrences d'un élément
+     * à partir d'un nœud donné, et met à jour la taille de la liste.
+     * @param element la valeur à supprimer
+     * @param tete le nœud à partir duquel commence la suppression
+     * @return le premier nœud de la liste obtenue après suppression,
+     *         ou null si elle est vide
+     */
     public Noeud supprimeTousRecurs(Object element, Noeud tete) {
         if (tete != null) {
             Noeud suiteListe = supprimeTousRecurs(element, tete.getSuivant());
@@ -80,6 +102,11 @@ public class ListeSimple {
         } else return null;
     }
 
+    /**
+     * Retourne l'avant-dernier nœud de la liste.
+     * @return l'avant-dernier nœud, ou null si la liste contient
+     *         moins de deux éléments
+     */
     public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;

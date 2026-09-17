@@ -1,7 +1,6 @@
 name: Bonjour
 
-on:
-  - push # Ce workflow se déclenche sur un push dans le dépôt
+on: [push] # Ce workflow se déclenche sur un push dans le dépôt
 
 jobs:
   Salutations: # Nom du job : Salutations
@@ -12,7 +11,7 @@ jobs:
       - name: Hello # Une tâche pour saluer
         env:
           personneASaluer: "Mon voisin Totoro"
-        run: echo "Bonjour ${personneASaluer}"
+        run: 'echo "Bonjour ${personneASaluer}"'
 
-      - name: L'heure de salutation # Affiche l'heure de la précédente tâche
-        run: echo "L'heure était $(date)."
+      - name: L'heure de salutation # Affiche l'heure
+        run: 'echo "L heure était $(date)."'

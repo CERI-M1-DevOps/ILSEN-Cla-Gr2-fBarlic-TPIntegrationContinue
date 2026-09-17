@@ -13,5 +13,5 @@ jobs:
           personneASaluer: "Mon voisin Totoro"
         run: 'echo "Bonjour ${personneASaluer}"'
 
-      - name: L'heure de salutation # Affiche l'heure
+      - name: L heure de salutation # Affiche l'heure
         run: 'echo "L heure était $(date)."'
